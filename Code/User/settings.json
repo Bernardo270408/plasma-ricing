@@ -1,0 +1,5 @@
+{
+    "workbench.iconTheme": "a-file-icon-vscode",
+    "files.autoSave": "afterDelay",
+    "git.enableSmartCommit": true
+}
