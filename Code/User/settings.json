@@ -1,5 +1,6 @@
 {
     "workbench.iconTheme": "a-file-icon-vscode",
     "files.autoSave": "afterDelay",
-    "git.enableSmartCommit": true
+    "git.enableSmartCommit": true,
+    "explorer.confirmDelete": false
 }
