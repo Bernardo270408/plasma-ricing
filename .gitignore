@@ -22,6 +22,7 @@
 **/tmp/
 **/*.tmp
 **/*.bak
+.avalonia-build-tasks
 
 # ==========================================
 # 2. BLOQUEIO DE APPS (Foco total no Rice)
