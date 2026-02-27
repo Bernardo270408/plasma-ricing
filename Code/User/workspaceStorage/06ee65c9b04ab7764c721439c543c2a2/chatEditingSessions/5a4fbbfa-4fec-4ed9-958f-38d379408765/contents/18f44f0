@@ -1,0 +1,136 @@
+* {
+  font-family: "Maple Mono", monospace;
+  font-weight: bold;
+  font-size: 14px;
+  border: none;
+  border-radius: 0;
+}
+
+/* Deixa a barra principal invisível */
+window#waybar {
+  background: transparent;
+}
+
+/* Estilo comum para os 3 blocos (Esquerda, Centro, Direita) */
+.modules-left,
+.modules-right {
+  background-color: rgba(20, 18, 22,0.7) ;
+  border-radius: 14px;
+  padding: 2px 10px;
+  margin-top: 5px;
+  border: 1px solid white;
+}
+
+/* Ajuste específico para os módulos dentro dos blocos */
+#battery,
+#network,
+#clock,
+#custom-applauncher,
+#tray,
+#workspaces,
+#pulseaudio {
+  color: #d8cab8;
+  background: transparent; /* Remove o fundo individual que estava desalinhando */
+  padding: 4px 8px;
+  margin: 0; /* Remove margens que causam descentralização */
+  transition-duration: 120ms;
+}
+
+#custom-applauncher { 
+  border-radius: 32px;
+  border: 3px solid #d8cab8;
+  margin: 2px;
+
+  font-size:xx-small;
+}
+
+#custom-applauncher:hover{
+  border: 3px solid #ac82e9;
+
+}
+
+
+/* Efeito de hover apenas para os itens clicáveis */
+#pulseaudio:hover,
+#custom-applauncher:hover {
+  color: #ac82e9;
+}
+
+/* Ajustes para os Workspaces (Hyprland/Sway) */
+#workspaces button {
+  transition-duration: 100ms;
+  all: initial;
+  min-width: 0;
+  background-color: transparent;
+  color: #d8cab8;
+  border-radius: 32px;
+  font-weight: bold;
+  padding: 4px 8px;
+  margin: 0 2px;
+
+} 
+#workspaces button.active,
+#workspaces button.focused {
+  background-color: #441782;
+  color: #ac82e9;
+}
+
+#workspaces button:hover {
+  color: #d8cab8;
+}
+
+/* Cores de alerta para bateria */
+#battery.warning,
+#battery.critical {
+  color: #fc4649;
+}
+
+/* CPU and Memory module styles */
+#cpu,
+#memory {
+  color: #d8cab8;
+  background: rgba(255,255,255,0.02);
+  padding: 4px 10px;
+  margin: 0 6px;
+  border-radius: 10px;
+  transition: color 120ms, background 120ms, transform 120ms;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+}
+
+#cpu:hover,
+#memory:hover {
+  color: #ac82e9;
+  background: rgba(172,130,233,0.04);
+  transform: translateY(-1px);
+}
+
+/* Optional warning/critical classes if provided by formats */
+#cpu.warning,
+#memory.warning {
+  color: #f6c177;
+}
+#cpu.critical,
+#memory.critical {
+  color: #fc4649;
+}
+
+/* Small inline bar support (applies if module outputs a .bar/.value structure) */
+#cpu .bar,
+#memory .bar {
+  background: rgba(255,255,255,0.06);
+  border-radius: 6px;
+  height: 8px;
+  width: 100px;
+  overflow: hidden;
+  display: inline-block;
+  vertical-align: middle;
+}
+
+#cpu .bar .value,
+#memory .bar .value {
+  height: 100%;
+  background: linear-gradient(90deg,#ac82e9,#6ecbff);
+  border-radius: 6px 0 0 6px;
+}

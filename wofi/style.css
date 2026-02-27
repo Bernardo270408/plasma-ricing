@@ -1,0 +1,76 @@
+* {
+  font-family: Maple Mono;
+  background: transparent;
+  color: #d8cab8;
+}
+
+#window {
+  color: #d8cab8;
+  border: 1px solid #d8cab8;
+  background-color: rgba(20, 18, 22, 0.50); /* Aumentei a opacidade já que o blur falha no CSS */
+  border-radius: 14px;
+  
+  /* Margem é crucial para a sombra aparecer */
+  margin: 15px; 
+  box-shadow: 10px 10px 0px black; /* Sombra sólida como no seu original */
+}
+
+/* Garanta que o Wofi não corte o conteúdo */
+#outer-box {
+  margin: 5px;
+}
+#scroll {
+  border-top-style: solid;
+  border-width: 1px;
+  border-color: #d8cab8;
+}
+#inner-box {
+  padding-top: 12px;
+}
+#entry {
+  border-style: none;
+  border-color: #d8cab8;
+  color: #d8cab8;
+  padding: 6px;
+  margin-bottom: 8px;
+  margin-left: 12px;
+  margin-right: 12;
+
+  border-radius: 12px;
+}
+
+#entry:selected {
+  background: #27232b;
+  color: #d8cab8;
+  font-weight: bold;
+  outline: none;
+}
+
+#input {
+  background-color: rgba(0, 0, 0,0.0);
+  color: #d8cab8;
+  border-color: #d8cab8;
+
+  border-style: none;
+  border-bottom-style: solid;
+  border-width: 1px;
+
+  font-style: normal;
+
+  border-radius: 8;
+  border-bottom-left-radius: 0px;
+  border-bottom-right-radius: 0px;
+
+  padding: 12px;
+  margin: 8px;
+}
+#input:focus {
+  border-color: #ac82e9;
+  font-style: italic;
+  outline: none;
+}
+
+#img {
+  padding: 4px;
+  margin-right: 6px;
+}

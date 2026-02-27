@@ -1,0 +1,9 @@
+[General Options]
+Geometry=1592,860
+autosavetime=5
+
+[MainWindow][Toolbar worktoolbar]
+ToolButtonStyle=IconOnly
+
+[workbar]
+ToolButtonStyle=IconOnly

@@ -1,0 +1,101 @@
+# ==========================================
+# 1. LIXO GLOBAL (Cache, Bancos de Dados e Logs)
+# ==========================================
+**/[Cc]ache*/
+**/GPUCache/
+**/Code Cache/
+**/blob_storage/
+**/Crashpad/
+**/DawnGraphiteCache/
+**/DawnWebGPUCache/
+**/Local Storage/
+**/Session Storage/
+**/Shared Dictionary/
+**/SharedStorage/
+**/WebStorage/
+**/Service Worker/
+**/Dictionaries/
+**/IndexedDB/
+**/*.db*
+**/*.log
+**/logs/
+**/tmp/
+**/*.tmp
+**/*.bak
+
+# ==========================================
+# 2. BLOQUEIO DE APPS (Foco total no Rice)
+# ==========================================
+# Removendo programas e ferramentas de trabalho
+beekeeper-studio/
+godot/
+wireshark/
+obs-studio/
+obsidian/
+GIMP/
+onlyoffice/
+OpenUtau/
+WarThunder/
+YouTube Music for Desktop/
+BraveSoftware/
+librewolf/
+mozilla/
+go/
+yay/
+matplotlib/
+gsmartcontrol/
+haruna/
+kate/
+umbrello/
+pavucontrol.ini
+
+# ==========================================
+# 3. SISTEMA E "ENCANAMENTO" (Infraestrutura)
+# ==========================================
+# Removendo arquivos de sessão, serviços e lixo do sistema
+systemd/
+akonadi*/
+dconf/
+ibus/
+pulse/
+session/
+trash/
+user-dirs.*
+mimeapps.list
+kactivitymanager*/
+baloo*/
+drkonqirc
+discoverrc
+filetypesrc
+kscreenlockerrc
+ksmserverrc
+ktimezonedrc
+ktrashrc
+kwalletrc
+phoneticsrc
+phishingurlrc
+plasma-welcomerc
+powermanagementprofilesrc
+sddmthemeinstallerrc
+
+# ==========================================
+# 4. SEGURANÇA E PRIVACIDADE
+# ==========================================
+**/*.pem
+**/*.key
+**/*.lock
+**/Cookies*
+**/TransportSecurity
+**/machineid
+kdeconnect/
+
+# ==========================================
+# 5. FILTRO DE DESENVOLVIMENTO (VS Code)
+# ==========================================
+# Mantém configs, mas remove o estado da aplicação
+Code/Backups/
+Code/Cached*/
+Code/User/History/
+Code/User/globalStorage/
+Code - OSS/Backups/
+Code - OSS/Cached*/
