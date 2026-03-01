@@ -240,6 +240,7 @@
 ; waveform = 0
 
 [color]
+theme = "noctalia"
 
 # Colors can be one of seven predefined: black, blue, cyan, green, magenta, red, white, yellow.
 # Or defined by hex code '#xxxxxx' (hex code must be within ''). User defined colors requires
@@ -250,7 +251,7 @@
 
 # SDL and sdl_glsl only support hex code colors, these are the default:
 ; background = '#111111'
-; foreground = '#33ffff'
+; foreground = '#FFFFFF
 
 
 # Gradient mode, only hex defined colors are supported,

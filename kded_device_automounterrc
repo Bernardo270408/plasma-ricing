@@ -15,8 +15,10 @@ LastNameSeen=109.5 GiB Internal Drive (sda6)
 LastSeenMounted=true
 
 [Devices][/org/freedesktop/UDisks2/block_devices/sdb1]
+EverMounted=true
 Icon=drive-removable-media-usb
 LastNameSeen=Novo volume
+LastSeenMounted=true
 
 [General]
 AutomountEnabled=true

@@ -12,3 +12,6 @@ ToolBarsMovable=Enabled
 
 [PreviewSettings]
 Plugins=imagethumbnail,glycin-image-rs,jpegthumbnail,kraorathumbnail,glycin-svg,svgthumbnail
+
+[UiSettings]
+ColorScheme=CatppuccinMocha

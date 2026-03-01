@@ -2,12 +2,6 @@
 
 # SwayFX Configuration File
 
-# Refatorado para clareza, manutenção e didática
-
-# Baseado no config original de diinki
-
-# Licença: MIT
-
 # ================================================================
 
 # ================================================================
@@ -20,7 +14,7 @@ set $mod Mod4
 
 # Direções (vim-style)
 
-set $left h
+set $left w
 set $down j
 set $up k
 set $right l
