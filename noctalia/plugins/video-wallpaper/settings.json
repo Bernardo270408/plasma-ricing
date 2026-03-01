@@ -1,3 +1,5 @@
 {
-  "thumbCacheReady": true
+  "thumbCacheReady": true,
+  "enabled": true,
+  "wallpapersFolder": "/home/duzentos/Pictures/wallpapers"
 }

@@ -1,0 +1,37 @@
+# window border
+window.active.border.color: #cba6f7
+window.inactive.border.color: #fab387
+
+# ToggleKeybinds status indicator
+window.active.indicator.toggled-keybind.color: #f38ba8
+
+# window titlebar background
+window.active.title.bg.color: #cba6f7
+window.inactive.title.bg.color: #fab387
+
+window.active.label.text.color: #11111b
+window.inactive.label.text.color: #11111b
+window.label.text.justify: center
+
+# window button hover overlay
+window.button.hover.bg.color: #3a3b50
+
+# window buttons
+window.active.button.unpressed.image.color: #11111b
+window.inactive.button.unpressed.image.color: #11111b
+
+# menu
+menu.border.color: #11111b
+menu.items.bg.color: #cba6f7
+menu.items.text.color: #11111b
+menu.items.active.bg.color: #fab387
+menu.items.active.text.color: #11111b
+menu.separator.color: #11111b
+menu.title.bg.color: #cba6f7
+menu.title.text.color: #11111b
+
+# on screen display (window-cycle dialog)
+osd.bg.color: #cba6f7
+osd.border.color: #11111b
+osd.label.text.color: #11111b
+osd.window-switcher.preview.border.color: #646789

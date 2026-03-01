@@ -148,6 +148,7 @@ Theme=Papirus
 
 [KDE]
 LookAndFeelPackage=com.github.vinceliuice.WhiteSur-dark
+ShowDeleteCommand=false
 contrast=4
 frameContrast=0.2
 
