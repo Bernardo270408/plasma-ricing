@@ -2,4 +2,5 @@
 Seen=true
 
 [DoNotDisturb]
+NotificationSoundsMuted=true
 Until=2027,2,27,0,43,40.481

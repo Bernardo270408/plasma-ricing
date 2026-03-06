@@ -12,4 +12,7 @@
   <property name="last-sort-column" type="string" value="THUNAR_COLUMN_DATE_MODIFIED"/>
   <property name="last-sort-order" type="string" value="GTK_SORT_DESCENDING"/>
   <property name="last-side-pane" type="string" value="THUNAR_SIDEPANE_TYPE_HIDDEN_SHORTCUTS"/>
+  <property name="misc-thumbnail-max-file-size" type="uint64" value="104857600"/>
+  <property name="misc-thumbnail-mode" type="string" value="THUNAR_THUMBNAIL_MODE_ALWAYS"/>
+  <property name="misc-thumbnail-draw-frames" type="bool" value="false"/>
 </channel>

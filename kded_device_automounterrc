@@ -5,8 +5,10 @@ LastNameSeen=1.0 GiB Internal Drive (sda3)
 LastSeenMounted=true
 
 [Devices][/org/freedesktop/UDisks2/block_devices/sda5]
+EverMounted=true
 Icon=drive-harddisk
 LastNameSeen=Basic data partition
+LastSeenMounted=true
 
 [Devices][/org/freedesktop/UDisks2/block_devices/sda6]
 EverMounted=true

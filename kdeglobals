@@ -172,7 +172,6 @@ View Style=DetailTree
 [PreviewSettings]
 EnableRemoteFolderThumbnail=false
 MaximumRemoteSize=0
-MaximumSize=31457280
 
 [Shortcuts]
 AboutApp=
