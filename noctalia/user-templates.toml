@@ -1,17 +1,10 @@
 [config]
+# Aqui você pode colocar configurações globais se precisar
 
 [templates]
 
-# User-defined templates
-# Add your custom templates below
-# Example:
-# [templates.myapp]
-# input_path = "~/.config/noctalia/templates/myapp.css"
-# output_path = "~/.config/myapp/theme.css"
-# post_hook = "myapp --reload-theme"
-
-# Remove this section and add your own templates
-#[templates.placeholder]
-#input_path = "/etc/xdg/quickshell/noctalia-shell/Assets/Templates/noctalia.json"
-#output_path = "/home/duzentos/.cache/noctalia/placeholder.json"
-
+[templates.kitty]
+# Troque 'duzentos' pelo seu nome de usuário real no sistema
+input_path = "/home/duzentos/.config/noctalia/templates/kitty-colors.conf"
+output_path = "/home/duzentos/.config/kitty/colors.conf"
+post_hook = "pkill -USR1 kitty"

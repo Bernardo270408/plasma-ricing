@@ -16,7 +16,7 @@
     "separator": " ",
     "color": {
       "keys": "35", 
-      "title": "34"
+      "title": "33"
     }
   },
   "modules": [
@@ -30,32 +30,33 @@
       "symbol":"circle"
     },
     // OS
-    { "type": "os", "key": "{#34}  System " },
+    { "type": "os", "key": "{#33}   System " },
 
-    { "type": "kernel", "key": "{#34}    Kernel " },
-    { "type": "de", "key": "{#34}    DE " },
-    { "type": "wm", "key": "{#34}    WM " },
-    { "type": "uptime", "key": "{#34}    Uptime" },
+
+    { "type": "kernel", "key": "{#33}    Kernel " },
+    { "type": "de", "key": "{#33}    DE " },
+    { "type": "wm", "key": "{#33}    WM " },
+    { "type": "uptime", "key": "{#33}    Uptime" },
 
     { "type": "custom", "format": "" },
 
     // Hardware -- Idk man
     {
       "type": "host",
-      "key": "{#34} {#35}󰇅 Hardware "
+      "key": "{#33} {#34}󰇅 Hardware "
     },
 
-    { "type": "cpu", "key": "{#35}    CPU", "showTemp": true },
-    { "type": "gpu", "key": "{#35}  󰢮  GPU" },
-    { "type": "memory", "key": "{#35}  󰍛  RAM" },
-    { "type": "disk", "key": "{#35}  󱛟  Disk", "showUsed": true },
+    { "type": "cpu", "key": "{#34}    CPU", "showTemp": true },
+    { "type": "gpu", "key": "{#34}  󰢮  GPU" },
+    { "type": "memory", "key": "{#34}  󰍛  RAM" },
+    { "type": "disk", "key": "{#34}  󱛟  Disk", "showUsed": true },
 
     { "type": "custom", "format": "" },
 
     // Development
     {
       "type": "custom",
-      "format": "{#34} {#32} Development "
+      "format": "{#33} {#32} Development "
     },
 
     {

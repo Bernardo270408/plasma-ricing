@@ -273,3 +273,6 @@ blur enable
 }
 for_window [app_id="thunar"] opacity 0.7
 for_window [app_id="code"] opacity 0.85
+
+include ~/.config/sway/noctalia
+
