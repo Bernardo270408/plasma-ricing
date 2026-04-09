@@ -1,0 +1,9 @@
+access_code = "Ass "
+bind_address = "192.168.3.255"
+web_port = 1701
+try_vaapi = false
+try_nvenc = false
+auto_start = false
+gui_theme = "Dark"
+no_gui = false
+wayland_support = true

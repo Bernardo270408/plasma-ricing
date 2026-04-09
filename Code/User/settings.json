@@ -68,6 +68,10 @@
     "window.menuBarVisibility": "compact",
     "window.commandCenter": false,
     "workbench.layoutControl.enabled": false,
+<<<<<<< HEAD
     "glassit.alpha": 222,
     "git.confirmSync": false
+=======
+    "glassit.alpha": 222
+>>>>>>> b4bac532c4d88f8315f8029dbbd9d51c585e058f
 }
