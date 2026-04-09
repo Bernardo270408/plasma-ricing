@@ -1,4 +1,13 @@
 {
     "colorscheme": "dracula",
-    "ft:conf": "ini"
+    "lsp.autocomplete": true,
+    "lsp.diagnostics": true,
+    "lsp.formatOnSave": true,
+    "lsp.ignoreMessages": ["virt_text_pos"],
+    "lsp.auto-trigger": true,
+    "lsp.on-type": true,
+    "lsp.format-on-type": true,
+    "autoclose": true,
+    "tabstospaces": true,
+    "tabsize": 4
 }

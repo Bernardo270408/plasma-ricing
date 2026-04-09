@@ -22,6 +22,8 @@
 **/tmp/
 **/*.tmp
 **/*.bak
+**/*.dll
+**/*.exe
 .avalonia-build-tasks
 
 # ==========================================
@@ -48,6 +50,13 @@ gsmartcontrol/
 haruna/
 kate/
 umbrello/
+hydralauncher/
+libresprite/
+balenaEtcher/
+audacity/
+weylus/
+VPN/
+
 pavucontrol.ini
 
 # ==========================================

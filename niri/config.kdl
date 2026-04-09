@@ -1,0 +1,340 @@
+// =====================================================================================
+// CONFIGURAÇÃO NIRI
+// Traduzido do Hyprland por 222
+// Filosofia: scrolling columns, workspaces dinâmicas, sem dwindle
+// =====================================================================================
+
+// -------------------------------------------------------------------------------------
+// INPUT
+// -------------------------------------------------------------------------------------
+input {
+    keyboard {
+        xkb {
+            layout "br"
+            options "grp:alt_shift_toggle"
+        }
+        numlock
+    }
+
+    touchpad {
+        tap
+    }
+
+    mouse {
+    }
+
+    // Foco segue o mouse (equivalente ao follow_mouse = 0)
+    focus-follows-mouse max-scroll-amount="0%"
+}
+
+// -------------------------------------------------------------------------------------
+// OUTPUTS
+// -------------------------------------------------------------------------------------
+// Descomente e ajuste conforme seu monitor
+// output "eDP-1" {
+//     mode "1920x1080@60"
+//     scale 1
+//     transform "normal"
+// }
+
+// -------------------------------------------------------------------------------------
+// LAYOUT
+// -------------------------------------------------------------------------------------
+layout {
+    // Equivalente ao gaps_in/gaps_out = 10 do Hyprland
+    gaps 10
+
+    // Larguras predefinidas para Mod+R (switch-preset-column-width)
+    preset-column-widths {
+        proportion 0.33333
+        proportion 0.5
+        proportion 0.66667
+    }
+
+    // Janela nova começa com metade da tela
+    default-column-width { proportion 0.5; }
+
+    // Focus ring — equivalente ao active/inactive border do Hyprland
+    // Mantendo sua paleta cyan/green
+    focus-ring {
+        width 2
+
+        // Gradiente cyan → green, igual ao seu col.active_border
+        active-gradient from="#33ccff" to="#00ff99" angle=45
+
+        // Equivalente ao inactive_border
+        inactive-color "#595959"
+    }
+
+    border {
+        off
+    }
+
+    // Sombra — equivalente ao shadow do Hyprland
+    shadow {
+        on
+        softness 4
+        spread 3
+        offset x=0 y=0
+        color "#1a1a1aee"
+    }
+}
+
+// -------------------------------------------------------------------------------------
+// PREFER-NO-CSD
+// Equivalente ao rounding do Hyprland — remove decorações client-side
+// e deixa o niri desenhar cantos arredondados corretamente
+// -------------------------------------------------------------------------------------
+prefer-no-csd
+
+// -------------------------------------------------------------------------------------
+// ANIMAÇÕES
+// Equivalente ao bloco animations do Hyprland
+// -------------------------------------------------------------------------------------
+animations {
+    // Niri usa spring/easing, não bezier nomeado — aproximando o feeling do seu myBezier
+    window-open {
+        spring damping-ratio=0.8 stiffness=1000 epsilon=0.0001
+        custom-shader r"
+            vec4 expanding_pixelate_shader(vec3 coords_geo, vec3 size_geo) {
+                return vec4(0.0);
+            }
+        "
+    }
+
+    window-close {
+        duration-ms 200
+    }
+
+    window-movement {
+        spring damping-ratio=0.8 stiffness=800 epsilon=0.0001
+    }
+
+    horizontal-view-movement {
+        spring damping-ratio=0.8 stiffness=800 epsilon=0.0001
+    }
+
+    workspace-switch {
+        spring damping-ratio=0.8 stiffness=800 epsilon=0.0001
+    }
+}
+
+// -------------------------------------------------------------------------------------
+// SCREENSHOT PATH
+// -------------------------------------------------------------------------------------
+screenshot-path "~/Pictures/Screenshots/Screenshot from %Y-%m-%d %H-%M-%S.png"
+
+// -------------------------------------------------------------------------------------
+// AUTOSTART
+// Equivalente ao exec-once do Hyprland
+// -------------------------------------------------------------------------------------
+spawn-at-startup "dbus-update-activation-environment" "--systemd" "WAYLAND_DISPLAY" "XDG_CURRENT_DESKTOP"
+spawn-at-startup "sh" "-c" "xhost +local:"
+spawn-at-startup "qs" "-c" "noctalia-shell"
+spawn-at-startup "/usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1"
+spawn-at-startup "nm-applet"
+
+// swaybg pode ou não funcionar dependendo da versão — swww é mais confiável no Niri
+// Se tiver swww: "swww-daemon" e depois "swww img /home/duzentos/Wallpapers/wallpaper.jpg"
+// Se preferir swaybg mesmo:
+spawn-at-startup "swaybg" "-i" "/home/duzentos/Wallpapers/wallpaper.jpg" "-m" "fill"
+
+spawn-at-startup "emote"
+spawn-at-startup "udiskie"
+spawn-at-startup "protonvpn-app"
+
+// -------------------------------------------------------------------------------------
+// ENVIRONMENT VARIABLES
+// No Niri, env vars são passadas via systemd environment ou ~/.config/environment.d/
+// Adicione em ~/.config/environment.d/niri.conf:
+//   XCURSOR_SIZE=24
+//   HYPRCURSOR_SIZE=24
+//   QT_QPA_PLATFORMTHEME=qt6ct
+// -------------------------------------------------------------------------------------
+
+// -------------------------------------------------------------------------------------
+// WINDOW RULES
+// -------------------------------------------------------------------------------------
+
+// Firefox Picture-in-Picture flutuante
+window-rule {
+    match app-id=r#"firefox$"# title="^Picture-in-Picture$"
+    open-floating true
+}
+
+// WezTerm bug workaround (mantido do default)
+window-rule {
+    match app-id=r#"^org\.wezfurlong\.wezterm$"#
+    default-column-width {}
+}
+
+// Opacidade inativa — equivalente ao inactive_opacity = 0.85 do Hyprland
+// Aplica em todas as janelas não focadas
+window-rule {
+    match is-focused=false
+    opacity 0.95
+}
+
+// Cantos arredondados — equivalente ao rounding = 10 do Hyprland
+window-rule {
+    geometry-corner-radius 10
+    clip-to-geometry true
+}
+
+// -------------------------------------------------------------------------------------
+// BINDS
+// Tradução fiel dos seus keybinds do Hyprland
+// $mainMod = Super
+// -------------------------------------------------------------------------------------
+binds {
+    // --- Apps ---
+    // Super+T / Ctrl+Alt+T → kitty
+    Mod+T { spawn "kitty"; }
+    Ctrl+Alt+T { spawn "kitty"; }
+
+    // Super+E → nautilus
+    Mod+E { spawn "nemo"; }
+
+    // Super+D → launcher noctalia-shell
+    Mod+D { spawn-sh "qs -c noctalia-shell ipc call launcher toggle"; }
+
+    // Super+C → code
+    Mod+C { spawn "code"; }
+
+    // Super+W → firefox
+    Mod+W { spawn "firefox"; }
+
+    // Super+Shift+W → librewolf
+    Mod+Shift+W { spawn "librewolf"; }
+
+    // Super+Shift+E → kitty com yazi
+    Mod+Shift+E { spawn-sh "kitty -e yazi"; }
+
+    // Super+period → emote
+    Super+Period { spawn "emote"; }
+
+    // --- Gestão de janelas ---
+    // Super+Q → fechar janela (equivalente ao killactive)
+    Mod+Q repeat=false { close-window; }
+
+    // Super+F → maximizar coluna (equivalente ao fullscreen)
+    Mod+F { maximize-column; }
+
+    // Super+Shift+F → fullscreen de verdade
+    Mod+Shift+F { fullscreen-window; }
+
+    // Super+V → toggle floating
+    Mod+V repeat=false { toggle-window-floating; }
+
+    // Super+Shift+Space → toggle floating (alias)
+    Mod+Shift+Space repeat=false { toggle-window-floating; }
+
+    // Super+Shift+V → alterna foco entre floating e tiling
+    Mod+Shift+V { switch-focus-between-floating-and-tiling; }
+
+    // Super+C → centralizar coluna
+    // (já usado pro code — remapeando center pra Mod+Shift+C)
+    Mod+Shift+C { center-column; }
+
+    // --- Movimentação de foco (setas) ---
+    Mod+Left  { focus-column-left; }
+    Mod+Right { focus-column-right; }
+    Mod+Up    { focus-window-up; }
+    Mod+Down  { focus-window-down; }
+
+    // --- Mover janelas (Super+Shift+Setas) ---
+    Mod+Shift+Left  { move-column-left; }
+    Mod+Shift+Right { move-column-right; }
+    Mod+Shift+Up    { move-window-up; }
+    Mod+Shift+Down  { move-window-down; }
+
+    // --- Workspaces numeradas (1-9, equivalente ao Hyprland) ---
+    Mod+1 { focus-workspace 1; }
+    Mod+2 { focus-workspace 2; }
+    Mod+3 { focus-workspace 3; }
+    Mod+4 { focus-workspace 4; }
+    Mod+5 { focus-workspace 5; }
+    Mod+6 { focus-workspace 6; }
+    Mod+7 { focus-workspace 7; }
+    Mod+8 { focus-workspace 8; }
+    Mod+9 { focus-workspace 9; }
+    Mod+0 { focus-workspace 10; }
+
+    // Mover janela pra workspace (Super+Shift+N)
+    Mod+Ctrl+1 { move-column-to-workspace 1; }
+    Mod+Ctrl+2 { move-column-to-workspace 2; }
+    Mod+Ctrl+3 { move-column-to-workspace 3; }
+    Mod+Ctrl+4 { move-column-to-workspace 4; }
+    Mod+Ctrl+5 { move-column-to-workspace 5; }
+    Mod+Ctrl+6 { move-column-to-workspace 6; }
+    Mod+Ctrl+7 { move-column-to-workspace 7; }
+    Mod+Ctrl+8 { move-column-to-workspace 8; }
+    Mod+Ctrl+9 { move-column-to-workspace 9; }
+
+    // --- Navegação sequencial de workspaces ---
+    // Equivalente ao Mod+Ctrl+Right/Left do Hyprland
+    Mod+Ctrl+Down { focus-workspace-down; }
+    Mod+Ctrl+Up  { focus-workspace-up; }
+
+    // Mover coluna pra workspace adjacente
+    Mod+Ctrl+Shift+Down { move-column-to-workspace-down; }
+    Mod+Ctrl+Shift+Up  { move-column-to-workspace-up; }
+
+    // --- Redimensionamento de colunas ---
+    // Equivalente ao resizewindow com mouse (mantido no mouse section abaixo)
+    Mod+Minus { set-column-width "-10%"; }
+    Mod+Equal { set-column-width "+10%"; }
+    Mod+Shift+Minus { set-window-height "-10%"; }
+    Mod+Shift+Equal { set-window-height "+10%"; }
+
+    // Mod+R → ciclar larguras predefinidas
+    Mod+R { switch-preset-column-width; }
+    Mod+Shift+R { switch-preset-window-height; }
+
+    // --- Sair com confirmação ---
+    // Equivalente ao swaynag do Hyprland
+    Mod+Shift+Q { quit; }
+
+    // --- Overview ---
+    // Não tem equivalente direto no Hyprland, mas é útil no Niri
+    Mod+O repeat=false { toggle-overview; }
+
+    // --- Dwindle equivalences no Niri ---
+    // consume/expel = empilhar janelas na mesma coluna
+    Mod+BracketLeft  { consume-or-expel-window-left; }
+    Mod+BracketRight { consume-or-expel-window-right; }
+    Mod+Comma  { consume-window-into-column; }
+    Mod+Period { expel-window-from-column; }
+
+    // --- Prints ---
+    // Print → screenshot full (equivalente ao grim | wl-copy)
+    Print { screenshot; }
+
+    // Super+S → screenshot de área selecionada (equivalente ao grim -g "$(slurp)" | wl-copy)
+    Mod+S { screenshot; }
+
+    // Ctrl+Print → screenshot da tela inteira sem seleção
+    Ctrl+Print { screenshot-screen; }
+
+    // Alt+Print → screenshot da janela ativa
+    Alt+Print { screenshot-window; }
+
+    // --- Mídia ---
+    XF86AudioRaiseVolume allow-when-locked=true { spawn-sh "wpctl set-volume -l 1.5 @DEFAULT_AUDIO_SINK@ 5%+"; }
+    XF86AudioLowerVolume allow-when-locked=true { spawn-sh "wpctl set-volume @DEFAULT_AUDIO_SINK@ 5%-"; }
+    XF86AudioMute        allow-when-locked=true { spawn-sh "wpctl set-mute @DEFAULT_AUDIO_SINK@ toggle"; }
+
+    // Brilho
+    XF86MonBrightnessUp   allow-when-locked=true { spawn "brightnessctl" "set" "5%+"; }
+    XF86MonBrightnessDown allow-when-locked=true { spawn "brightnessctl" "set" "5%-"; }
+
+    // --- Misc ---
+    Mod+Escape allow-inhibiting=false { toggle-keyboard-shortcuts-inhibit; }
+    Mod+Shift+P { power-off-monitors; }
+
+    // Hotkey overlay (Mod+? no teclado br pode variar)
+    Mod+Shift+Slash { show-hotkey-overlay; }
+}
+
+include "./noctalia.kdl"
+

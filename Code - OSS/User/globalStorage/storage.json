@@ -1,7 +1,7 @@
 {
     "telemetry.sqmId": "",
     "telemetry.machineId": "ba14a7bec255757dc1026f4891d9e38943aadf46d0308cfa6540b7cb826aa0c1",
-    "telemetry.devDeviceId": "52fa1b68-dd0a-426d-914a-af9bc5ed5097",
+    "telemetry.devDeviceId": "b7169e2f-2836-45dd-a9a8-6d5381a0a185",
     "backupWorkspaces": {
         "workspaces": [],
         "folders": [],
@@ -21,23 +21,20 @@
         }
     },
     "theme": "vs-dark",
-    "themeBackground": "#1f1f1f",
+    "themeBackground": "#070722",
     "windowSplash": {
         "zoomLevel": 0,
         "baseTheme": "vs-dark",
         "colorInfo": {
-            "foreground": "#cccccc",
-            "background": "#1f1f1f",
-            "editorBackground": "#1f1f1f",
-            "titleBarBackground": "#181818",
-            "titleBarBorder": "#2b2b2b",
-            "activityBarBackground": "#181818",
-            "activityBarBorder": "#2b2b2b",
-            "sideBarBackground": "#181818",
-            "sideBarBorder": "#2b2b2b",
-            "statusBarBackground": "#181818",
-            "statusBarBorder": "#2b2b2b",
-            "statusBarNoFolderBackground": "#1f1f1f"
+            "foreground": "#ffffff",
+            "background": "#070722",
+            "editorBackground": "#070722",
+            "titleBarBackground": "#070722",
+            "titleBarBorder": "rgba(167, 158, 173, 0)",
+            "activityBarBackground": "#070722",
+            "sideBarBackground": "#0c0c3b",
+            "statusBarBackground": "#0b0b37",
+            "statusBarNoFolderBackground": "#070722"
         },
         "layoutInfo": {
             "sideBarSide": "left",
@@ -54,11 +51,11 @@
         "lastActiveWindow": {
             "backupPath": "/home/duzentos/.config/Code - OSS/Backups/1770472816037",
             "uiState": {
-                "mode": 1,
+                "mode": 0,
                 "x": 0,
                 "y": 0,
-                "width": 1572,
-                "height": 826
+                "width": 1600,
+                "height": 900
             }
         },
         "openedWindows": []

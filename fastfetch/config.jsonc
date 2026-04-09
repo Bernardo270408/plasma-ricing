@@ -1,93 +1,93 @@
 {
   "$schema": "https://github.com/fastfetch-cli/fastfetch/raw/dev/doc/json_schema.json",
   "logo": {
-    "source": "~/.config/fastfetch/ASCII/arch.txt",
+    "source": "~/.config/fastfetch/ASCII/makima_small.ansi",
     "color":{
-      "1": "34"
+      "1": "35"
     },
     "padding":{
-    	"top":2
+      "top":1,
+      "left":2,
+      "right":2,
+      "bottom":2
     }
   },  
   "display": {
     "separator": " ",
     "color": {
       "keys": "35", 
-      "title": "34"
+      "title": "33"
     }
   },
   "modules": [
 
     // User
     {
-      "type": "title",
-      "format": "{#34}╭────── {#34}{#37}{user-name}{#37}@{#37}{host-name} "
+      "type": "title"
     },
-    { "type": "custom", "format": "{#34}│" },
-
+    {
+      "type":"colors",
+      "symbol":"circle"
+    },
     // OS
-    { "type": "os", "key": "{#34}├─ {#34}  System " },
+    { "type": "os", "key": "{#33}   System " },
 
-    { "type": "kernel", "key": "{#34}│  {#34}    Kernel " },
-    { "type": "de", "key": "{#34}│  {#34}    DE " },
-    { "type": "wm", "key": "{#34}│  {#34}    WM " },
-    { "type": "uptime", "key": "{#34}│  {#34}    Uptime" },
 
-    { "type": "custom", "format": "{#34}│" },
+    { "type": "kernel", "key": "{#33}    Kernel " },
+    { "type": "de", "key": "{#33}    DE " },
+    { "type": "wm", "key": "{#33}    WM " },
+    { "type": "uptime", "key": "{#33}    Uptime" },
+
+    { "type": "custom", "format": "" },
 
     // Hardware -- Idk man
     {
       "type": "host",
-      "key": "{#34}├─ {#35}󰇅 Hardware "
+      "key": "{#33} {#34}󰇅 Hardware "
     },
 
-    { "type": "cpu", "key": "{#34}│  {#35}    CPU", "showTemp": true },
-    { "type": "gpu", "key": "{#34}│  {#35}  󰢮  GPU" },
-    { "type": "memory", "key": "{#34}│  {#35}  󰍛  RAM" },
-    { "type": "disk", "key": "{#34}│  {#35}  󱛟  Disk", "showUsed": true },
+    { "type": "cpu", "key": "{#34}    CPU", "showTemp": true },
+    { "type": "gpu", "key": "{#34}  󰢮  GPU" },
+    { "type": "memory", "key": "{#34}  󰍛  RAM" },
+    { "type": "disk", "key": "{#34}  󱛟  Disk", "showUsed": true },
 
-    { "type": "custom", "format": "{#34}│" },
-
+    { "type": "custom", "format": "" },
 
     // Development
     {
       "type": "custom",
-      "format": "{#34}├─ {#37} Development "
+      "format": "{#33} {#32} Development "
     },
 
     {
       "type": "command",
-      "key": "{#34}│  {#37}    Godot",
+      "key": "{#32}    Godot",
       "text": "godot --version | cut -d'.' -f1-3",
       "shell": "/bin/sh"
     },
     {
       "type": "command",
-      "key": "{#34}│  {#37}    Python",
+      "key": "{#32}    Python",
       "text": "python3 --version | cut -d' ' -f2",
       "shell": "/bin/sh"
     },
     {
       "type": "command",
-      "key": "{#34}│  {#37}    Node",
+      "key": "{#32}    Node",
       "text": "node --version | cut -d' ' -f2",
       "shell": "/bin/sh"
     },
     {
       "type": "command",
-      "key": "{#34}│  {#37}  󰊤  Repositories",
+      "key": "{#32}  󰊤  Repositories",
       "text": "ls ~/Development/Repositories | wc -l",
       "shell": "/bin/sh"
     },
+    { "type": "custom", "format": "" },
 
-    { "type": "custom", "format": "{#34}│" },
     {
       "type": "colors",
-      "key": "{#34}│ ",
-      "symbol": "circle"
-    },
-
-    { "type": "custom", "format": "{#34}╰─────────────────────────" }
-
+      "symbol":"circle"
+    }
   ]
 }

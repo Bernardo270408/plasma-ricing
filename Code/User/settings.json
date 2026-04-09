@@ -3,7 +3,7 @@
     "files.autoSave": "afterDelay",
     "git.enableSmartCommit": true,
     "explorer.confirmDelete": false,
-    "workbench.colorTheme": "Catppuccin Macchiato",
+    "workbench.colorTheme": "NoctaliaTheme",
     "code-runner.executorMap": {
 
         "javascript": "node",
@@ -64,5 +64,9 @@
         "pkl": "cd $dir && pkl eval -f yaml $fileName -o $fileNameWithoutExt.yaml",
         "gleam": "gleam run -m $fileNameWithoutExt"
     },
-    "code-runner.runInTerminal": true
+    "code-runner.runInTerminal": true,
+    "window.menuBarVisibility": "compact",
+    "window.commandCenter": false,
+    "workbench.layoutControl.enabled": false,
+    "glassit.alpha": 222
 }
