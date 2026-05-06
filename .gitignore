@@ -57,6 +57,12 @@ audacity/
 weylus/
 VPN/
 Code/
+Google/
+menus/
+PCSX2/
+Raspberry Pi/
+VirtualBox/
+
 
 pavucontrol.ini
 
@@ -88,7 +94,8 @@ phishingurlrc
 plasma-welcomerc
 powermanagementprofilesrc
 sddmthemeinstallerrc
-
+kdeglobals
+partitionmanagerrc
 # ==========================================
 # 4. SEGURANÇA E PRIVACIDADE
 # ==========================================

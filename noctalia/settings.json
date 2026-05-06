@@ -42,7 +42,7 @@
     "bar": {
         "autoHideDelay": 500,
         "autoShowDelay": 150,
-        "backgroundOpacity": 0,
+        "backgroundOpacity": 1,
         "barType": "floating",
         "capsuleColorKey": "none",
         "capsuleOpacity": 0.7000000000000001,
@@ -50,12 +50,12 @@
         "density": "default",
         "displayMode": "always_visible",
         "enableExclusionZoneInset": true,
-        "fontScale": 1,
+        "fontScale": 0.86,
         "frameRadius": 12,
         "frameThickness": 8,
         "hideOnOverview": false,
-        "marginHorizontal": 4,
-        "marginVertical": 4,
+        "marginHorizontal": 200,
+        "marginVertical": 5,
         "middleClickAction": "none",
         "middleClickCommand": "",
         "middleClickFollowMouse": false,
@@ -71,15 +71,16 @@
         "rightClickFollowMouse": true,
         "screenOverrides": [
         ],
-        "showCapsule": true,
+        "showCapsule": false,
         "showOnWorkspaceSwitch": true,
         "showOutline": false,
-        "useSeparateOpacity": false,
-        "widgetSpacing": 6,
+        "useSeparateOpacity": true,
+        "widgetSpacing": 1,
         "widgets": {
             "center": [
                 {
                     "colorizeSystemIcon": "none",
+                    "colorizeSystemText": "none",
                     "customIconPath": "",
                     "enableColorization": true,
                     "icon": "grid-dots",
@@ -167,18 +168,6 @@
                     "visualizerType": "mirrored"
                 },
                 {
-                    "defaultSettings": {
-                        "activeColor": "primary",
-                        "enableToast": true,
-                        "hideInactive": false,
-                        "iconSpacing": 4,
-                        "inactiveColor": "none",
-                        "micFilterRegex": "",
-                        "removeMargins": false
-                    },
-                    "id": "plugin:privacy-indicator"
-                },
-                {
                     "blacklist": [
                     ],
                     "chevronColor": "none",
@@ -207,8 +196,19 @@
                 },
                 {
                     "defaultSettings": {
+                        "autoPaste": false,
+                        "autoPasteDelay": 300,
+                        "autoPasteOnRightClick": false,
+                        "cardColors": {
+                        },
+                        "customColors": {
+                        },
                         "enableTodoIntegration": false,
+                        "fullscreenMode": false,
+                        "hidePanelBackground": false,
                         "notecardsEnabled": true,
+                        "panelHeight": 0,
+                        "panelWidth": 1450,
                         "pincardsEnabled": true,
                         "showCloseButton": true
                     },
@@ -217,6 +217,7 @@
                 {
                     "colorizeDistroLogo": false,
                     "colorizeSystemIcon": "none",
+                    "colorizeSystemText": "none",
                     "customIconPath": "",
                     "enableColorization": true,
                     "icon": "noctalia",
@@ -255,7 +256,7 @@
         "manualSunrise": "06:30",
         "manualSunset": "18:30",
         "monitorForColors": "",
-        "predefinedScheme": "Gruvbox",
+        "predefinedScheme": "Catppuccin",
         "schedulingMode": "off",
         "syncGsettings": true,
         "useWallpaperColors": false
@@ -323,7 +324,7 @@
     "desktopWidgets": {
         "enabled": true,
         "gridSnap": false,
-        "gridSnapScale": false,
+        "gridSnapScale": true,
         "monitorWidgets": [
             {
                 "name": "DP-3",
@@ -345,9 +346,10 @@
                             "useGradient": true
                         },
                         "id": "plugin:deskvis",
+                        "scale": 1.040997208620023,
                         "showBackground": true,
-                        "x": 566,
-                        "y": 660
+                        "x": 557,
+                        "y": 699
                     },
                     {
                         "clockColor": "none",
@@ -361,19 +363,6 @@
                         "useCustomFont": false,
                         "x": 21,
                         "y": 45
-                    },
-                    {
-                        "hideMode": "visible",
-                        "id": "MediaPlayer",
-                        "roundedCorners": false,
-                        "scale": 1.2115059502267886,
-                        "showAlbumArt": true,
-                        "showBackground": false,
-                        "showButtons": true,
-                        "showVisualizer": false,
-                        "visualizerType": "linear",
-                        "x": 564,
-                        "y": 792
                     }
                 ]
             }
@@ -382,7 +371,7 @@
     },
     "dock": {
         "animationSpeed": 1,
-        "backgroundOpacity": 0.79,
+        "backgroundOpacity": 1,
         "colorizeIcons": false,
         "deadOpacity": 1,
         "displayMode": "auto_hide",
@@ -395,7 +384,7 @@
         "groupIndicatorStyle": "dots",
         "inactiveIndicators": true,
         "indicatorColor": "primary",
-        "indicatorOpacity": 0.6,
+        "indicatorOpacity": 0.5,
         "indicatorThickness": 3,
         "launcherIcon": "grid-dots",
         "launcherIconColor": "primary",
@@ -435,7 +424,7 @@
         "enableLockScreenMediaControls": false,
         "enableShadows": true,
         "forceBlackScreenCorners": false,
-        "iRadiusRatio": 1,
+        "iRadiusRatio": 0.47000000000000003,
         "keybinds": {
             "keyDown": [
                 "Down"
@@ -469,7 +458,7 @@
         ],
         "lockScreenTint": 0,
         "passwordChars": false,
-        "radiusRatio": 1,
+        "radiusRatio": 0.48,
         "reverseScroll": false,
         "scaleRatio": 0.9,
         "screenRadiusRatio": 1,
@@ -589,7 +578,7 @@
             1,
             2
         ],
-        "location": "top_right",
+        "location": "top",
         "monitors": [
         ],
         "overlayLayer": true
